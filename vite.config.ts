@@ -2,23 +2,23 @@ import { defineConfig } from "vite";
 import livePreview from "vite-live-preview";
 
 export default defineConfig({
-  plugins: [
-    livePreview({
-      reload: true,
-    }),
-  ],
-  build: {
-    rollupOptions: {
-      input: {
-        plugin: "src/plugin.ts",
-        index: "./index.html",
-      },
-      output: {
-        entryFileNames: "[name].js",
-      },
+    plugins: [
+        livePreview({
+            reload: true,
+        }),
+    ],
+    build: {
+        rollupOptions: {
+            input: {
+                plugin: "src/plugin.ts",
+                index: "./index.html",
+            },
+            output: {
+                entryFileNames: "[name].js",
+            },
+        },
     },
-  },
-  preview: {
-    port: 4400,
-  },
+    preview: {
+        port: 4400,
+    },
 });

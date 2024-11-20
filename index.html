@@ -3,22 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Penpot plugin example</title>
+    <title>Penpot maps editor</title>
   </head>
   <body>
-    <p>Penpot plugin starter template</p>
+    <div class="export-settings">
+      <label for="map-height">
+        Height:
+        <input
+          type="number"
+          id="map-height"
+          name="map-height"
+          placeholder="e.g. 500"
+          min="0"
+        />
+      </label>
+      <label for="map-width">
+        Width:
+        <input
+          type="number"
+          id="map-width"
+          name="map-width"
+          placeholder="e.g. 800"
+          min="0"
+        />
+      </label>
+    </div>
 
-    <p>
-      Checkout the
-      <a target="_blank" href="https://help.penpot.app/plugins/"
-        >documentation</a
-      >
-      to get started.
-    </p>
+    <div class="export-settings">
+      <label for="select-map-provider">
+        Change map provider:
+        <select id="select-map-provider" class="select">
+          <option value="osm" selected="selected">OpenStreetMap</option>
+          <option value="thunderforest">Thunderforest</option>
+        </select>
+      </label>    
+      <label id="select-thunderforest-map-type-label" for="select-thunderforest-map-type" class="hidden">
+        Change map type:
+        <select id="select-thunderforest-map-type" class="select">
+          <option value="atlas" selected="selected">Atlas</option>
+          <option value="cycle">Cycle</option>
+          <option value="transport">Transport</option>
+          <option value="landscape">Landscape</option>
+          <option value="outdoors">Outdoors</option>
+          <option value="transport-dark">Transport Dark</option>
+          <option value="spinal-map">Spinal Map</option>
+          <option value="pioneer">Pioneer</option>
+          <option value="mobile-atlas">Mobile Atlas</option>
+          <option value="neighbourhood">Neighbourhood</option>
+        </select>
+      </label>
+    </div>
 
-    <button type="button" data-appearance="primary" data-handler="create-text">
-      Create text
-    </button>
+    <div id="thunderforest-key-container" class="hidden">
+      <p class="alert">
+        You need a <a href="https://www.thunderforest.com/" target="_blank">free thunderforest API key</a> to use the advanced map styles.<br />
+        Once submitted, the key will be saved permanently in penpot.
+      </p>
+
+      <div class="thunderforest-key-input">
+        <label for="thunderforest-key">
+          Thunderforest API key:
+          <input
+            type="text"
+            id="thunderforest-key"
+            name="thunderforest-key"
+            placeholder="fn643abc099..."
+          />
+        </label>
+        <button type="button" data-appearance="primary" data-handler="save-thunderforest-key">
+          Save
+        </button>
+      </div>
+    </div>
+    
+    <div class="map-container">
+      <div class="auto-search-wrapper">
+        <input
+          type="text"
+          autocomplete="off"
+          id="search"
+          class="full-width"
+          placeholder="Search a place..."
+        />
+      </div>
+      <button type="button" data-appearance="primary" data-handler="create-image">
+        Take picture here
+      </button>
+      <div id="map"></div>
+    </div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,14 +1,100 @@
 @import "@penpot/plugin-styles/styles.css";
+@import "leaflet/dist/leaflet.css";
+@import "./vendor/autocomplete.css";
 
 body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  padding: 10px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    padding: 10px;
 }
 
 p {
-  margin-block-end: 0.75rem;
+    margin-block-end: 0.75rem;
+}
+
+#map {
+    height: 300px;
+    position: relative;
+    z-index: 10;
+}
+
+input {
+    width: 100%;
+    border-radius: var(--spacing-8);
+    padding: var(--spacing-8);
+    background: var(--background-tertiary) var(--spacing-8) no-repeat;
+    color: var(--foreground-secondary);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-regular);
+}
+
+#search {
+    background: var(--background-tertiary)
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="main-grid-item-icon" fill="none" stroke="%238f9da3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><circle cx="11" cy="11" r="8" /><line x1="21" x2="16.65" y1="21" y2="16.65" /></svg>')
+        var(--spacing-8) no-repeat;
+    padding-left: var(--spacing-28);
+}
+
+.export-settings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-12);
+}
+
+label {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--input-foreground-color);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.map-container {
+    position: relative;
+}
+
+button {
+    margin-top: var(--spacing-12);
+}
+
+[data-handler="create-image"] {
+    margin-bottom: var(--spacing-12);
+}
+
+a {
+    color: var(--da-primary);
+}
+
+/* floating button:
+
+button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+    z-index: 9999;
+} */
+
+.alert {
+    background-color: #2d3434;
+    padding: 9px 11px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.thunderforest-key-input {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--spacing-8);
 }
