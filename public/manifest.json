@@ -1,5 +1,5 @@
 {
-  "name": "Penpot maps editor",
+  "name": "Penpot map editor",
   "code": "plugin.js",
   "description": "Add real-world 2d maps to your penpot design",
   "icon": "/icon.png",
