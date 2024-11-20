@@ -8,7 +8,22 @@ By default, this plugin uses [OSM](https://www.openstreetmap.org/) tile layers a
 
 This plugin was set up with [Penpot Plugin Starter Template](https://github.com/penpot/penpot-plugin-starter-template).
 
-## Installation
+## Usage
+
+To enable this plugin in your penpot instance:
+
+1. **Open the Plugin Manager:** Use the shortcut `Ctrl + Alt + P` in any file to open the Plugin Manager modal.
+
+2. **Enter the manifest URL:** In the Plugin Manager, provide the plugin URL: *https://penpot-maps-editor.netlify.app/manifest.json*
+
+3. **Click "Install"**
+
+4. **Access the plugin:** Once installed, you can open and use the plugin directly from within Penpot whenever you need it.
+
+Enjoy :)
+
+
+## Installation & local development
 
 (Taken from Penpot Plugin Starter Template:)
 
