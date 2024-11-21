@@ -66,6 +66,7 @@ button {
 
 [data-handler="create-image"] {
     margin-bottom: var(--spacing-12);
+    width: 100%;
 }
 
 a {
