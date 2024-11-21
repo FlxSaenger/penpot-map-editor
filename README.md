@@ -1,10 +1,12 @@
 # Penpot map editor plugin
 
-**Make your designs even more impressive by adding real-world 2D maps to penpot!** 
+**Make your penpot designs more impressive by adding hand-crafted 2D maps!** 
 
-The map editor allows penpot designers to search for locations, adjust the width, height and zoom of your map and insert a screenshot as a new layer.
+The map editor plugin allows designers to search for places, to adjust the width, height and zoom of the map and to export it as image directly into your document.
 
 By default, this plugin uses [OSM](https://www.openstreetmap.org/) tile layers and [Nominatim](https://nominatim.openstreetmap.org/ui/search.html) for searching places. More themes can be picked after adding a (free) [thunderforest API key](https://www.thunderforest.com/).
+
+![Screenshot showing map editor plugin configuration UI and an exported map](docs/preview.png)
 
 This plugin was set up with [Penpot Plugin Starter Template](https://github.com/penpot/penpot-plugin-starter-template).
 

@@ -16,7 +16,7 @@ const PLUGIN_DATA_THUNDERFOREST_KEY = "thunderforest-key";
 // Open modal window and initialize app
 penpot.ui.open("Penpot map editor", `?theme=${penpot.theme}`, {
     width: 450,
-    height: 650,
+    height: 600,
 });
 
 penpot.ui.onMessage<Message>((message) => {
