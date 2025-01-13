@@ -1,4 +1,4 @@
-import L from "leaflet";
+import L, { TileLayer } from "leaflet";
 import leafletImage from "leaflet-image";
 import { canvasToUint8Array } from "./utils";
 import { AppState, MapProvider, THUNDERFOREST_MAP } from "./types";
@@ -49,20 +49,33 @@ const initApp = (state: AppState) => {
         zoom: DEFAULT_ZOOM,
     });
 
+    let layer: TileLayer;
+
     const updateMapTiles = (): void => {
         if (
             state.mapProvider === "thunderforest" &&
             !hasThunderforestKey(state)
-        )
+        ) {
             return;
+        }
+
+        // clear any given layer
+        if (layer) {
+            map.removeLayer(layer);
+        }
 
         // create a new tile layer
         const tileUrl =
             state.mapProvider === "osm"
                 ? `https://tile.openstreetmap.org/{z}/{x}/{y}.png`
                 : `https://tile.thunderforest.com/${state.thunderforestMapType}/{z}/{x}/{y}{r}.png?apikey=${state.thunderforestKey}`;
-        console.log(tileUrl, state.mapProvider);
-        const layer = new L.TileLayer(tileUrl, { maxZoom: 18 });
+
+        const attribution =
+            state.mapProvider === "osm"
+                ? `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`
+                : `Maps &copy;<a href="https://www.thunderforest.com">Thunderforest</a>, Data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>`;
+
+        layer = new L.TileLayer(tileUrl, { maxZoom: 18, attribution });
 
         map.addLayer(layer);
     };
