@@ -16,7 +16,7 @@ To enable this plugin in your penpot instance:
 
 1. **Open the Plugin Manager:** Use the shortcut `Ctrl + Alt + P` in any file to open the Plugin Manager modal.
 
-2. **Enter the manifest URL:** In the Plugin Manager, provide the plugin URL: *https://penpot-maps-editor.netlify.app/manifest.json*
+2. **Enter the manifest URL:** In the Plugin Manager, provide the plugin URL: *https://penpot-map-editor.netlify.app/manifest.json*
 
 3. **Click "Install"**
 
